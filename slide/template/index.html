@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    .biglogo {
+      background-image: url('images/google-logo.png') !important;
+    }
+
+    .slides.template-default > article:not(.nobackground):not(.biglogo) {
+      background: url(images/google-logo-small.png) 750px 565px no-repeat !important;
+      background-color: white !important;
+    }
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+      <article class='biglogo'>
+
+      </article>
+
+      <article>
+        <h1>
+          Migrando do Grunt para o Gulp
+        </h1>
+        <p>
+          Manoel Quirino Neto
+          <br>
+          Meetup paraiba.js
+        </p>
+      </article>
+      
+      <article>
+        <h3>
+          Quem sou?
+        </h3>
+
+        <p>
+          Front-end na <a href="http://sodavirtu.al" target="blank">Soda virtual</a>.
+        </p>
+        <p>
+          GitHub /<a href="https://github.com/manoelneto" target="_blank">manoelneto</a>
+        </p>
+        <p>
+          Twitter @<a href="https://twitter.com/manoel_n" target="_blank">manoel_n</a>
+        </p>
+        <p>Desenvolvedor do melhor site nacional de 2013 (http://domotiq.com.br/) pela ABRADi (Associação Brasileira das Agências Digitais)</p>
+      </article>
+      
+      <!--
+      <article>
+        <h3>Conteúdo</h3>
+
+        <ul>
+          <li>Introdução</li>
+          <li>Workflow</li>
+          <li>Porque migrar do grunt para o gulp?</li>
+          <li>Grunt</li>
+          <li>Gulp</li>
+          <li>Diferenças do grunt e gulp</li>
+          <li>
+            Montando um <i>Gruntfile</i> e um <i>Gulpfile</i>
+          </li>
+          <li>Conclusão</li>
+        </ul>
+      </article> -->
+
+      <article>
+        <h3>Workflow</h3>
+
+        <p>Todo bom desenvolvedor se preocupa no seu workflow</p>
+
+        <ul>
+          <li>Pré-processa o css</li>
+          <li>Testa javascript</li>
+          <li>Concatena javascript/css</li>
+          <li>Minifica imagens</li>
+        </ul>
+
+      </article>
+
+      <article>
+        <h3>O problema</h3>
+
+        <p>Para cada tarefa, era necessário executar um processo. Há casos em que eram utilizados programas desktops ao invés de utilizar a linha de comando, utilizando mais memória e processamento do computador.</p>
+
+        <p>Geralmente eram abertas várias abas do terminal para cada tarefa.</p>
+
+      </article>
+
+      <article>
+        <h2>Solução</h2>
+      </article>
+
+      <article>
+        <img src="images/grunt.png" alt="" class="centered">
+      </article>
+
+      <article>
+        <h3>
+          Grunt
+        </h3>
+
+        <ul>
+          <li>Automatizador de tarefas</li>
+          <li>node.js</li>
+          <li>Configuração (Gruntfile.js)</li>
+          <li>Ben Alman (@cowboy)</li>
+          <li>http://gruntjs.com</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Grunt</h3>
+
+        <h4>Instalando o Grunt</h4>
+        <pre>$ npm install grunt --save-dev</pre>
+
+        <h4>Rodando o Grunt</h4>
+        <pre>$ grunt [task]</pre>
+      </article>
+
+      <article class="fill">
+        <p>
+          <img src="images/grunt-config.png" alt="">
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Depois do Grunt
+        </h3>
+
+        <p>1 processo para rodar o grunt e o grunt executa as tarefas</p>
+
+        <ul>
+          <li>pré-processar o css</li>
+          <li>juntar o css</li>
+          <li>minificar o css</li>
+          <li>comprimir imagens</li>
+          <li>testar o código</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Agora, vamos falar de coisa boa.</h2>
+      </article>
+
+      <article>
+        <h2>Vamos falar de</h2>
+      </article>
+
+      <article>
+        <img src="images/tekpix.jpg" alt="" class="centered">
+      </article>
+
+      <article>
+        <img src="images/gulp.png" alt="" class="centered">
+      </article>
+
+      <article>
+        <h3>
+          Gulp
+        </h3>
+
+        <ul>
+          <li>Automatizador de tarefas</li>
+          <li>node.js</li>
+          <li>Convenção sobre configuração</li>
+          <li>várias threads</li>
+          <li>stream</li>
+          <li>Fractal (@weareFractal)</li>
+          <li>http://gulpjs.com/</li>
+          <li>Não resolve nenhum problema.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Gulp</h3>
+
+        <h4>Instalando o Gulp</h4>
+        <pre>$ npm install gulp --save-dev</pre>
+
+        <h4>Rodando o Gulp</h4>
+        <pre>$ gulp [task]</pre>
+      </article>
+
+      <article class="fill">
+        <p>
+          <img src="images/gulpfile.png" alt="">
+        </p>
+      </article>
+
+      <article class="smaller">
+        <h3>Principais comandos</h3>
+
+        <ul>
+          <li>.src(globs[, options]) recebe um "glob" e retorna um <i>input stream</i></li>
+          <li>.dest(path) recebe um "path" e retorna um <i>output stream</i></li>
+          <li>.task(name[, deps], fn) define uma task</li>
+          <li>.run(tasks...[, cb]) executa tarefas</li>
+          <li>.watch(globs[, options], cb) escuta o sistema de arquivos</li>
+        </ul>
+
+        <p>Exemplo:</p>
+
+        <pre>
+          gulp.src('./client/templates/*.jade')
+            .pipe(jade())
+            .pipe(minify())
+            .pipe(gulp.dest('./build/minified_templates'));
+        </pre>
+      </article>
+
+      <article>
+        <h2>Diferenças</h2>
+      </article>
+
+      <article>
+        <h3>Carregando as bibliotecas</h3>
+        <p></p>
+        <h3>Grunt:</h3>
+        
+        <pre>
+          grunt.loadNpmTasks('grunt-contrib-compass');
+          grunt.loadNpmTasks('grunt-contrib-uglify');
+          grunt.loadNpmTasks('grunt-contrib-cssmin');
+        </pre>
+
+        <h3>Gulp:</h3>
+
+        <pre>
+          var compass = require('gulp-compass'),
+              uglify = require('gulp-uglify'),
+              minifyCSS = require('gulp-minify-css');
+        </pre>
+      </article>
+
+
+      <article>
+        <h3>Tarefa</h3>
+        <p></p>
+        <h3>Grunt:</h3>
+        
+        <pre>
+          concat: {
+            options: {
+              separator: ';'
+            },
+            dist: {
+              src: ['src/**/*.js'],
+              dest: 'dest/final.js'
+            }
+          },
+        </pre>
+
+      </article>
+        
+      <article>
+        
+        <h3>Tarefa</h3>
+        <p></p>
+        <h3>Gulp:</h3>
+
+        <pre>
+          gulp.task('compass', function () {
+
+              gulp.src('./_scss/main.scss')
+                  .pipe(compass({
+                    css : 'css',
+                    sass : '_scss'
+                  }))
+                  .pipe(minifyCSS())
+                  .pipe(gulp.dest('./css'));
+
+          });
+        </pre>
+      </article>
+
+      <article class="">
+        <h3>Arquivo final Grunt</h3>
+
+        <pre>module.exports = function(grunt) {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    sass : {
+      dist : {
+        files : [{
+          expand : true,
+          src: ['./scss/**/*.{scss,sass}'],
+          dest: './css',
+          ext : '.css'
+        }]
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.registerTask('default', ['sass']);
+};</pre>
+      </article>
+
+      <article class="">
+        <h3>Arquivo final Gulp</h3>
+
+        <pre>var 
+  gulp = require('gulp'),
+  sass = require('gulp-sass');
+
+gulp.task('sass', function() {
+
+  gulp.src('./scss/**/*.{scss,sass}')
+    .pipe(sass())
+    .pipe(gulp.dest('./css/'))
+
+});
+
+gulp.task('default', function(){
+  gulp.run('sass');
+});</pre>
+      </article>
+
+      <article>
+        <h3>Então, qual o melhor?</h3>
+        <p></p>
+        <h4>Grunt</h4>
+        <ul>
+          <li>Documentação</li>
+          <li>Comunidade</li>
+          <li>Plugins</li>
+        </ul>
+        <h4>Gulp</h4>
+        <ul>
+          <li>Mais rápido</li>
+          <li>Mais legível</li>
+        </ul>
+
+      </article>
+
+      <article class="">
+        <img src="images/bode.jpg" alt="" class="centered">
+      </article>
+
+      <article class="fill">
+        <h3>Github gulp (https://github.com/gulpjs/gulp#gulp)</h3>
+        <img src="images/github-gulp.png" alt="">
+      </article>
+
+      <article class="fill">
+        <h3>Comunidade gulp Brasil no facebook (https://www.facebook.com/groups/gulpbrasil/)</h3>
+        <img src="images/comunidade-gulp-fb.png" alt="">
+      </article>
+
+      <article class="fill">
+        <h3>Plugins do gulp (https://www.facebook.com/groups/gulpbrasil/gulp-plugins.png)</h3>
+        <img src="images/gulp-plugins.png" alt="">
+      </article>
+
+      <article class="fill">
+        <h3>A arte do node (https://github.com/vitorbritto/art-of-node/blob/master/readme.pt-br.md)</h3>
+        <img src="images/arte-do-node.png" alt="">
+      </article>
+
+
+      <article>
+        <h3>Referências</h3>
+
+        <ul>
+          <li>gulp (http://gulpjs.com/)</li>
+          <li>grunt (http://gruntjs.com/)</li>
+          <li>Github gulp (https://github.com/gulpjs/gulp#gulp)</li>
+          <li>Comunidade gulp Brasil no facebook (https://www.facebook.com/groups/gulpbrasil/)</li>
+          <li>Plugins do gulp http://gratimax.github.io/search-gulp-plugins/</li>
+          <li>A arte do node (https://github.com/vitorbritto/art-of-node/blob/master/readme.pt-br.md)</li>
+          <li>Gulp is the new black (http://www.shaundunne.com/gulp-is-the-new-black/)</li>
+        </ul>
+      </article>
+
+      <article>
+        <q>
+          E aí? Let`s code?
+        </q>
+      </article>
+
+    </section>
+
+  </body>
+</html>
